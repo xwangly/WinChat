@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion "23.0.1"
+
+    android{ compileOptions.encoding="gbk" }
+    defaultConfig {
+        applicationId "com.ty.winchat"
+        minSdkVersion 11
+        targetSdkVersion 15
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'gbk'
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:18.0.0'
+}
